@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vuepress 自定义主题搭建自己的博客</title>
+    <meta name="description" content="
+第一步
+在你文档根目录创建一个文件夹blog(自定义)
+创建文件README.md 相当于首页
+
+全局安装vuepress
+yarn global add vuepress # 或者：npm install -g vuepress
+
+创建项目目录
+` ...">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/vuepress-blog-custom/assets/css/0.styles.8ce8a10b.css" as="style"><link rel="preload" href="/vuepress-blog-custom/assets/js/app.b4a0a26c.js" as="script"><link rel="preload" href="/vuepress-blog-custom/assets/js/7.5de155f5.js" as="script"><link rel="preload" href="/vuepress-blog-custom/assets/js/14.4eb4c64a.js" as="script"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/10.d18f250a.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/11.6b7706be.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/12.cc1d7fc4.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/13.3067f383.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/15.eab9ee8f.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/16.e596cc62.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/2.4b56ea5a.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/3.78f3fecd.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/4.491ed922.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/5.050840ca.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/6.32d9b04f.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/8.efe3ea48.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/9.5fb5f593.js">
+    <link rel="stylesheet" href="/vuepress-blog-custom/assets/css/0.styles.8ce8a10b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="content__default"><h1 id="vuepress-自定义主题搭建自己的博客"><a href="#vuepress-自定义主题搭建自己的博客" class="header-anchor">#</a> vuepress 自定义主题搭建自己的博客</h1> <h2 id="第一步"><a href="#第一步" class="header-anchor">#</a> 第一步</h2> <p>在你文档根目录创建一个文件夹<code>blog</code>(自定义)
+创建文件<code>README.md</code> 相当于首页</p> <h3 id="全局安装vuepress"><a href="#全局安装vuepress" class="header-anchor">#</a> 全局安装vuepress</h3> <div class="language- extra-class"><pre class="language-text"><code>yarn global add vuepress # 或者：npm install -g vuepress
+</code></pre></div><h3 id="创建项目目录"><a href="#创建项目目录" class="header-anchor">#</a> 创建项目目录</h3> <div class="language- extra-class"><pre class="language-text"><code>mkdir blog
+cd blog
+</code></pre></div><h3 id="初始化项目"><a href="#初始化项目" class="header-anchor">#</a> 初始化项目</h3> <div class="language- extra-class"><pre class="language-text"><code>yarn init -y # 或者 npm init -y
+</code></pre></div><h3 id="运行项目"><a href="#运行项目" class="header-anchor">#</a> 运行项目</h3> <div class="language- extra-class"><pre class="language-text"><code>vuepress dev blog
+</code></pre></div><h3 id="或者在项目目录下局部安装vuepress"><a href="#或者在项目目录下局部安装vuepress" class="header-anchor">#</a> 或者在项目目录下局部安装vuepress</h3> <div class="language- extra-class"><pre class="language-text"><code>yarn add -D vuepress # 或者 npm install -D vuepress
+</code></pre></div><h3 id="配置package-json"><a href="#配置package-json" class="header-anchor">#</a> 配置package.json</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress dev docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress build docs&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="运行项目-2"><a href="#运行项目-2" class="header-anchor">#</a> 运行项目</h3> <div class="language- extra-class"><pre class="language-text"><code>yarn dev # 或者 npm run dev
+</code></pre></div><p>就初步运行成功啦！</p> <h2 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h2> <h3 id="网站必要配置"><a href="#网站必要配置" class="header-anchor">#</a> 网站必要配置</h3> <p>在<code>blog</code>下文件夹创建<code>.vuepress/config.js</code>文件，这是vuepress网站必要的配置文件
+因为我是在全局安装了<code>vuepress</code>所以不需要<code>pakage.json</code></p> <h3 id="应用级配置"><a href="#应用级配置" class="header-anchor">#</a> 应用级配置</h3> <p>在<code>blog</code>下文件夹创建<code>.vuepress/enhanceApp.js</code>文件</p> <h2 id="主题"><a href="#主题" class="header-anchor">#</a> 主题</h2> <h3 id="自定义主题"><a href="#自定义主题" class="header-anchor">#</a> 自定义主题</h3> <p>项目目录大概整体如下：</p> <div class="language- extra-class"><pre class="language-text"><code>.
+├── blog
+│   ├── .vuepress (可选的)
+│   │   ├── components (可选的)
+│   │   ├── theme (可选的)
+│   │   │   └── layouts
+│   │   │       ├── Layout.vue
+│   │   │       └── 404.vue
+│   │   ├── public (可选的)
+│   │   ├── styles (可选的)
+│   │   │   ├── index.styl
+│   │   │   └── palette.styl
+│   │   ├── templates (可选的, 谨慎配置)
+│   │   │   ├── dev.html
+│   │   │   └── ssr.html
+│   │   ├── config.js (可选的)
+│   │   └── enhanceApp.js (可选的)
+│   │ 
+│   ├── about
+│   │   └── README.md
+│   ├── articles
+│   │   ├── artical1.md
+│   │   ├── artical2.md
+│   │   ├── artical3.md
+│   │   └── README.md
+│   └── README.md
+│ 
+└── package.json
+
+</code></pre></div><p><code>Layout.vue</code>是主页，作为入口文件</p> <h3 id="组件"><a href="#组件" class="header-anchor">#</a> 组件</h3> <p>在你文档根目录创建一个 <code>.vuepress/components</code>目录，该目录下直接的<code>.vue</code>文件会作为全局组件，接着创建一个 Nav.vue 文件：</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>主页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/articles<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>文章列表<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/about<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>关于<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>。。。算了 一些基础就不说了，官网查一查还是比较清楚</p> <h3 id="分页"><a href="#分页" class="header-anchor">#</a> 分页</h3> <p>带出货...</p> <h3 id="分类"><a href="#分类" class="header-anchor">#</a> 分类</h3> <p>带出货...</p> <h3 id="搜索"><a href="#搜索" class="header-anchor">#</a> 搜索</h3> <p>带出货...</p> <h3 id="文章列表"><a href="#文章列表" class="header-anchor">#</a> 文章列表</h3> <p><code>articles/README.md</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//  articles/README.md</span>
+<span class="token operator">--</span><span class="token operator">-</span>
+layout<span class="token operator">:</span> article_list
+<span class="token operator">--</span><span class="token operator">-</span>
+# 这里是文章列表
+
+<span class="token comment">// 设置了layout， 默认就会显示`components/article_list.vue`</span>
+</code></pre></div><div class="language-vue extra-class"><pre class="language-vue"><code>//  这里是components/article_list.vue
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ablock<span class="token punctuation">&quot;</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>index in list.length<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>list[index-1].key<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">:href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>list[index-1].path<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>标题：{{list[index-1].title}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>summary<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>摘要：{{list[index-1].summary}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>date<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>日期：{{list[index-1].frontmatter.date}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 筛选出文章数据，并按frontmatter中的date 排序</span>
+    <span class="token function">list</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$site<span class="token punctuation">.</span>pages<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span> <span class="token parameter">v</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> v<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'/articles/'</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> v<span class="token punctuation">.</span>path<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span>y</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> x<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>date <span class="token operator">&lt;</span> y<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>date<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="如何根据文章自动生成摘要"><a href="#如何根据文章自动生成摘要" class="header-anchor">#</a> 如何根据文章自动生成摘要</h4> <p>上面<code>components/article_list.vue</code> 列表渲染的summary在此处生成</p> <p>在<code>.vuepress/config.js</code>里配置<a href="https://www.vuepress.cn/zh/plugin/option-api.html?#extendpagedata" target="_blank" rel="noopener noreferrer">extendPageData<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，代码如下（<a href="https://github.com/vuepressjs/vuepress-theme-blog/blob/master/index.js" target="_blank" rel="noopener noreferrer">出处<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>）：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> removeMd <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'remove-markdown'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> themeConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
+  summary<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  summaryLength<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+
+  <span class="token function">extendPageData</span><span class="token punctuation">(</span><span class="token parameter">$page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> strippedContent <span class="token operator">=</span> $page<span class="token punctuation">.</span>_strippedContent
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>strippedContent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>themeConfig<span class="token punctuation">.</span>summary<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      $page<span class="token punctuation">.</span>summary <span class="token operator">=</span>
+        <span class="token function">removeMd</span><span class="token punctuation">(</span>
+          strippedContent
+            <span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/^#+\s+(.*)/</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> themeConfig<span class="token punctuation">.</span>summaryLength<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' ...'</span>
+      $page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>description <span class="token operator">=</span> $page<span class="token punctuation">.</span>summary
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>$page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>summary<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      $page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>description <span class="token operator">=</span> $page<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>summary
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>就是把<code>_strippedContent</code>去空格，去掉不必要的字符，截取设定的长度，再通过 <code>remove-markdown</code>去除markdown的格式，然后赋值到<code>$page.summary</code>以及<code>$page.frontmatter.description</code></p> <p>好了文章列表显示差不多，就样式需要改进。</p></div><div class="global-ui"></div></div>
+    <script src="/vuepress-blog-custom/assets/js/app.b4a0a26c.js" defer></script><script src="/vuepress-blog-custom/assets/js/7.5de155f5.js" defer></script><script src="/vuepress-blog-custom/assets/js/14.4eb4c64a.js" defer></script>
+  </body>
+</html>
