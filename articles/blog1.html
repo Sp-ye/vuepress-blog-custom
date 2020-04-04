@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>关于搭建Vuepress的问题</title>
+    <meta name="description" content="
+目前通过 yarn create vuepress的方式创建blog会存在一个问题
+vuepress/theme-blog在2.0.0的版本有个重大变化，那就是Front Matter一个默认的key 从tag变成tags
+所以在创建完项目会发现tag标签并没有自动生成。
+
+所以这里记 ...">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/vuepress-blog-custom/assets/css/0.styles.250b5493.css" as="style"><link rel="preload" href="/vuepress-blog-custom/assets/js/app.0b40f5e5.js" as="script"><link rel="preload" href="/vuepress-blog-custom/assets/js/7.3785c6c4.js" as="script"><link rel="preload" href="/vuepress-blog-custom/assets/js/13.b90a61aa.js" as="script"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/10.9d743237.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/11.a221af21.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/12.df63208a.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/14.1d66a6e0.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/15.09b4742e.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/16.e596cc62.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/2.4b56ea5a.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/3.50326ad0.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/4.39711949.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/5.b7739117.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/6.df61beb4.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/8.efe3ea48.js"><link rel="prefetch" href="/vuepress-blog-custom/assets/js/9.5fb5f593.js">
+    <link rel="stylesheet" href="/vuepress-blog-custom/assets/css/0.styles.250b5493.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="content__default"><h1 id="关于搭建vuepress的问题"><a href="#关于搭建vuepress的问题" class="header-anchor">#</a> 关于搭建Vuepress的问题</h1> <p>目前通过 <code>yarn create vuepress</code>的方式创建blog会存在一个问题
+<code>vuepress/theme-blog</code>在2.0.0的版本有个重大变化，那就是<code>Front Matter</code>一个默认的key 从tag变成tags
+所以在创建完项目会发现tag标签并没有自动生成。</p> <p>所以这里记得改下</p> <div class="language- extra-class"><pre class="language-text"><code>---
+date: 2019-5-6
+tag:  // =&gt; tags 
+  - theme
+  - blog
+  - vuepress
+author: ULIVZ
+location: Shanghai  
+---
+</code></pre></div><h6 id="随手记录下啦～～～"><a href="#随手记录下啦～～～" class="header-anchor">#</a> 随手记录下啦～～～</h6></div><div class="global-ui"></div></div>
+    <script src="/vuepress-blog-custom/assets/js/app.0b40f5e5.js" defer></script><script src="/vuepress-blog-custom/assets/js/7.3785c6c4.js" defer></script><script src="/vuepress-blog-custom/assets/js/13.b90a61aa.js" defer></script>
+  </body>
+</html>
